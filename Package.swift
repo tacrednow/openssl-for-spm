@@ -4,16 +4,15 @@
 import PackageDescription
 
 let package = Package(
-    name: "openssl-for-spm",
+    name: "opensslforspm",
     products: [
-        .library(name: "openssl-for-spm",
-                 targets: ["openssl-for-spm"])
+        .library(name: "opensslforspm",
+                 targets: ["spm"])
     ],
     targets: [
-        .target(name: "spm"),
-        .target(name: "openssl-for-spm",
-                //                  path: "Sources",
-            publicHeadersPath: "")
+        .target(name: "spm",
+                path: "Sources",
+            publicHeadersPath: ""),
     ]
 )
 

@@ -3,16 +3,19 @@
 
 import PackageDescription
 
-let package = Package(name: "openssl-for-spm",
-platforms: [.macOS(.v10_10),
-            .iOS(.v9),
-            .tvOS(.v9),
-            .watchOS(.v2)],
-products: [.library(name: "openssl-for-spm",
-                    targets: ["openssl-for-spm"])],
-targets: [.target(name: "openssl-for-spm",
-//                  path: "Sources",
-                  publicHeadersPath: "")])
+let package = Package(
+    name: "openssl-for-spm",
+    products: [
+        .library(name: "openssl-for-spm",
+                 targets: ["openssl-for-spm"])
+    ],
+    targets: [
+        .target(name: "spm"),
+        .target(name: "openssl-for-spm",
+                //                  path: "Sources",
+            publicHeadersPath: "")
+    ]
+)
 
 //let package = Package(
 //    name: "openssl-for-spm",
